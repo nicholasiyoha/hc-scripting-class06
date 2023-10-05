@@ -1,9 +1,9 @@
  # Create VM using azure cli
  az vm create\
-> --name nickdemoVM\
-> --resource-group test.rg \
-> --location eastus \
-> --image Win2022AzureEditionCore\
-> --public-ip-sku Standard\
->  --admin-username azureuser \
-> --admin-password Mypassowrd12
+--name nickdemoVM\
+--resource-group test.rg \
+--location eastus \
+--image Win2022AzureEditionCore\
+--public-ip-sku Standard\
+--admin-username azureuser \
+--admin-password Mypassowrd12
