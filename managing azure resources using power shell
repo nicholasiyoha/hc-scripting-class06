@@ -2,7 +2,9 @@
 # Question: Manage Azure resources by Using Azure PowerShell
 # Solutions
 # Step 1: Install and Set Up Azure PowerShell
-# Step 2:Sign into your azure account using 'Connect-AzAccount'
+# Step 2:Sign into your azure account using 
+Connect-AzAccount
+
 # Manage Azure Resources
 
 
@@ -32,7 +34,7 @@ Get-AzVM -ResourceGroupName MyResourceGroup
 Start-AzVM -ResourceGroupName MyResourceGroup -Name MyVM
 Stop-AzVM -ResourceGroupName MyResourceGroup -Name MyVM -Force
 
-#Delete a Resource Group and its Resources:
+#Delete a Resource Group and its Resources
 
 Remove-AzResourceGroup -Name MyResourceGroup -Force
 
