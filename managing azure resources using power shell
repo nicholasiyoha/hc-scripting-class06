@@ -1,0 +1,38 @@
+# Class assigment
+# Question: Manage Azure resources by Using Azure PowerShell
+# Solutions
+# Step 1: Install and Set Up Azure PowerShell
+# Step 2:Sign into your azure account using 'Connect-AzAccount'
+# Manage Azure Resources
+
+
+#CREATE AZURE RESOURCES GROUP
+
+New-AzResourceGroup -Name MyResourceGroup -Location EastUS
+
+#Create a Virtual Machine:
+
+New-AzVM 
+-ResourceGroupName MyResourceGroup 
+-Name MyVM 
+-Image UbuntuLTS 
+-Size Standard_DS2_v2 
+-Credential (Get-Credential) 
+-Location EastUS
+
+#List Resource Groups:
+
+Get-AzResourceGroup
+
+#List Virtual Machines in a Resource Group:
+Get-AzVM -ResourceGroupName MyResourceGroup
+
+
+#Start/Stop a Virtual Machine:
+Start-AzVM -ResourceGroupName MyResourceGroup -Name MyVM
+Stop-AzVM -ResourceGroupName MyResourceGroup -Name MyVM -Force
+
+#Delete a Resource Group and its Resources:
+
+Remove-AzResourceGroup -Name MyResourceGroup -Force
+
