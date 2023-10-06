@@ -21,3 +21,10 @@ az storage account create \
     --location $location
 
 echo "Azure Storage Account deployment completed."
+
+# in your bash terminal, make the script executable
+chmod +x deploy-storage-account.sh
+
+# In you bash terminal run
+sh "scriptname.sh"
+
