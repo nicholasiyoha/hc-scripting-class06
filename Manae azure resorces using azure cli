@@ -1,0 +1,36 @@
+# Manage azure resource using azure cli
+
+#step 1: from the command prompt, login in to your azure accout 
+az login 
+
+#Step 2: Select Subscription if you have multiple subcription id.
+az account set --subscription <subscription_name_or_id>
+
+#Step 3: Create a Resource Group
+az group create --name haddyazcli-rg --location eastus
+
+#Step 4: Create a Virtual Machine
+
+az vm create --resource-group haddyazcli-rg --name haddyAZCLIVM --image UbuntuLTS --admin-username admin02 --admin-password omokhodion123%
+
+#Step 5: List azure resources
+
+az resource list --resource-group haddyazcli-rg
+
+#Step6: View Resource Details
+
+az resource show --id /subscriptions/0e700e55-c403-4e89-92b4-9d69bd9eb3ec/resourceGroups/haddyazcli-rg/providers/Microsoft.Network/networkInterfaces/haddyAZCLIVMVMNic
+
+#Step7 update resourse ID
+az resource update --id /subscriptions/0e700e55-c403-4e89-92b4-9d69bd9eb3ec/resourceGroups/haddyazcli-rg/providers/Microsoft.Network/networkInterfaces/haddyAZCLIVMVMNic
+ --set tags.key=value
+
+# Step8 Delete a Resource:
+
+az resource delete --id /subscriptions/0e700e55-c403-4e89-92b4-9d69bd9eb3ec/resourceGroups/haddyazcli-rg/providers/Microsoft.Network/networkInterfaces/haddyAZCLIVMVMNic
+
+
+
+
+
+
