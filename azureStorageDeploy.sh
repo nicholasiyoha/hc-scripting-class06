@@ -1,4 +1,5 @@
-# Define variables for the deployement of azure storage account using power powershell
+#Class  assigment quuestion 1
+#Define variables for the deployement of azure storage account using power powershell
 #!/bin/bash
 
 # Define variables for your Azure resources
