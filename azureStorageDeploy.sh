@@ -1,4 +1,6 @@
 # Define variables for the deployement of azure storage account using power powershell
+#!/bin/bash
+
 $resourceGroupName = "test-rg1"
 $storageAccountName = "nickomostorage"
 $location = "eastus"
