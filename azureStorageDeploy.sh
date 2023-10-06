@@ -1,21 +1,22 @@
 # Define variables for the deployement of azure storage account using power powershell
 #!/bin/bash
 
-$resourceGroupName = "test-rg1"
-$storageAccountName = "nickomostorage"
-$location = "eastus"
-$storageSku = "Standard_LRS"  # Change this to the desired SKU
-$kind = "StorageV2"  # Change this to the desired kind (e.g., StorageV2, BlobStorage, etc.)
+# Define variables for your Azure resources
+resourceGroupName="test-rg01"
+storageAccountName="nickomostorage01"
+sku="Standard_LRS"  # You can change this to the desired SKU (e.g., Premium_LRS)
+kind="StorageV2"    # You can change this to the desired kind (e.g., StorageV2)
+location="eastus"   # You can change this to your desired location
 
-# Create a new resource group
- New-AzResourceGroup create
- -Name $resourceGroupName 
- -Location $location
+# Create a resource group
+az group create --name $resourceGroupName --location $location
 
-# Create a new storage account
- New-AzStorageAccount create
- -ResourceGroupName $resourceGroupName
- -Name $storageAccountName 
- -SkuName $storageSku 
- -Kind $kind 
- -Location $location
+# Create a storage account
+az storage account create \
+    --name $storageAccountName \
+    --resource-group $resourceGroupName \
+    --sku $sku \
+    --kind $kind \
+    --location $location
+
+echo "Azure Storage Account deployment completed."
