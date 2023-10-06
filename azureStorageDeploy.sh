@@ -1,5 +1,5 @@
 #Class  assigment quuestion 1
-#Define variables for the deployement of azure storage account using power powershell
+#Write and execute a script to deploy an Azure Storage Account, Resource Group, Storage SKU, Kind and Location.  
 #!/bin/bash
 
 # Define variables for your Azure resources
@@ -26,5 +26,7 @@ echo "Azure Storage Account deployment completed."
 chmod +x deploy-storage-account.sh
 
 # In you bash terminal run
-sh "scriptname.sh"
+sh azureStorageDeploy.sh
+
+
 
