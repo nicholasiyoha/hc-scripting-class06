@@ -1,0 +1,46 @@
+#Implement Azure Virtual Networks and Peering Using Azure CLI
+
+
+# Create the first VNet
+az network vnet create\
+ --resource-group test-rg\
+ --name hadnicVNet1\
+  --location eastus\
+   --address-prefix 10.1.0.0/16\
+    --subnet-name hadnicSubnet1\
+     --subnet-prefix 10.1.1.0/24
+
+# Create the second VNet
+az network vnet create\
+ --resource-group test2-rg\
+ --name hadnicVNet2\
+ --location eastus2\
+ --address-prefix 10.2.0.0/16\
+  --subnet-name hadnicSubnet2\
+   --subnet-prefix 10.2.1.0/24
+
+#To verify the hadnicVNet2 was created, run:
+az network vnet list --output table
+
+#Verify hadnicVNet2 Network Subnets were created, run:
+az network vnet subnet list\
+ --resource-group test2-rg\
+  --vnet-name hadnicVNet2\
+   --output table
+#............................................................
+
+#To add additional SubNets to an existing VNet, run:    
+az network vnet subnet create \
+    --resource-group test2-rg\
+    --vnet-name hadnicVNet2 \
+    --name hadnicSubnet3 \
+    --address-prefix 10.2.2.0/24
+
+#To verify the hadnicVNet2 was created, run:
+az network vnet list --output table
+
+#Verify hadnicVNet2 Network Subnets were created, run:
+az network vnet subnet list\
+ --resource-group test2-rg\
+  --vnet-name hadnicVNet2\
+   --output table
